@@ -1,0 +1,10 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas
+
+fig, ax = plt.subplots()
+df = pandas.DataFrame(np.random.normal(size=(37,5)), columns=list('ABCDE'))
+df.boxplot(ax=ax, positions=[2,3,4,6,8], notch=True, bootstrap=5000)
+ax.set_xticks(range(10))
+ax.set_xticklabels(range(10))
+plt.show()
